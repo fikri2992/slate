@@ -17,7 +17,7 @@ meta:
     content: Documentation for the Bannerbite API
 ---
 
-# Bannerbear API Reference
+# Bannerbite API Reference
 > Base URL
 
 ```
