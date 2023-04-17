@@ -277,28 +277,30 @@ This endpoint retrieves scenes data from bite.
 Parameter | Description
 --------- | -----------
 ID | The ID of the bite to retrieve
-<!-- 
+
 # Renders
 
 ## Generate Image/Video
+> Example JSON Scenes Data:
+
+```json
+[                                                                     
+  { 
+    "email": "test@mail.com",
+    "sc01_txt_01": "What is Lorem Ipsum?",
+    "sc01_img_01": "https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/baklava_p_2/img_0.png",
+    "sc01_txt_02": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  }
+]
+```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "data": {
-      "id": 1,
-      "user_id": 1,
-      "name": "Social Media Post 31.09.22",
-      "slug": "social-media-post-310922-300925",
-      "description": null,
-      "settings": null,
-      "created_at": "2022-09-31T01:27:00Z",
-      "updated_at": "2022-09-31T01:27:00Z",
-      "background_color": null,
-      "image": "https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/project/img-project-9_1.jpg",
-      "meta": {}
-  }
+  "id": 1,
+  "message": "Render request has been aceppted and now in progress",
+  "created_at": "2023-04-17"
 }
 ```
 
@@ -322,4 +324,4 @@ audioUrl | null | Retrieve URL Audio
 type | image | Type of render <code>image</code> or <code>video</code>
 scene | 0 | If the type is <code>image</code>, the <code>scene</code> parameter is required. This parameter determines which scene will be rendered
 webhook | string | Please provide the webhook URL where you would like to receive notifications or updates by filling in the designated field
-sceneData | object |  -->
+sceneData | object | Array of object include email and scenes data
