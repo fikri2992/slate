@@ -1,0 +1,760 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the Bannerbite API"
+        >
+    <title>Bannerbite API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/dev-logo-ondark-bbf6ebaf.png" class="logo" alt="" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#bannerbite-api-reference" class="toc-h1 toc-link" data-title="Bannerbite API Reference">Bannerbite API Reference</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-projects" class="toc-h2 toc-link" data-title="Get All Projects">Get All Projects</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-projects" class="toc-h2 toc-link" data-title="Get a Specific Projects">Get a Specific Projects</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#bites" class="toc-h1 toc-link" data-title="Bites">Bites</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-bites" class="toc-h2 toc-link" data-title="Get All Bites">Get All Bites</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-bites" class="toc-h2 toc-link" data-title="Get a Specific Bites">Get a Specific Bites</a>
+                  </li>
+                  <li>
+                    <a href="#get-scenes-data" class="toc-h2 toc-link" data-title="Get Scenes Data">Get Scenes Data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#renders" class="toc-h1 toc-link" data-title="Renders">Renders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#generate-image-video" class="toc-h2 toc-link" data-title="Generate Image/Video">Generate Image/Video</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://app.bannerbite.com/'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='bannerbite-api-reference'>Bannerbite API Reference</h1>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>https://api.bannerbite.com
+</code></pre></div>
+<p>Welcome to the Bannerbite API! <a href="https://bannerbite.com/">Bannerbite</a> is a service that auto generates images and videos.</p>
+
+<p>Bite-size videos are the perfect way to capture your audience&#39;s attention. They&#39;re short and sweet, but they still get the point across. With Bannerbite create bite-sized video in seconds!</p>
+<h1 id='authentication'>Authentication</h1>
+<p>Bannerbite uses API keys to allow access to the API. You can get an API key from your account settings.</p>
+
+<p>Bannerbite expects the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: Bearer API_KEY</code></p>
+
+<p>You can find the API key in My Account → API Settings.</p>
+
+<aside class="notice">
+You must replace <code>API_KEY</code> with your personal API key.
+</aside>
+<h1 id='projects'>Projects</h1><h2 id='get-all-projects'>Get All Projects</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Media Post 31.09.22"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social-media-post-310922-300925"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-31T01:27:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-31T01:27:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/project/img-project-9_1.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Media Post 30.09.22"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social-media-post-300922-300924"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-30T01:25:28Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-30T01:25:28Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/project/img-project-3_1.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all projects.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET http://example.com/api/projects</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>10</td>
+<td>The API returns 10 items per page by default but you can request up to 100 using this parameter.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-projects'>Get a Specific Projects</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Media Post 31.09.22"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social-media-post-310922-300925"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-31T01:27:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-31T01:27:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/project/img-project-9_1.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific project.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://example.com/projects/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='bites'>Bites</h1><h2 id='get-all-bites'>Get All Bites</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bite_size_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test shareable"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"untitled-video-499"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"output"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">scenes</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">template</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:957,</span><span class="se">\"</span><span class="s2">file_path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/monaka_uno/1679382245485-Monaka_P_-_1.json</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">audioUrl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">thumbnail</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/template/images/1679382254309-Monaka_P_-_1.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">size</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">post</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Monaka Uno</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">duration</span><span class="se">\"</span><span class="s2">:15,</span><span class="se">\"</span><span class="s2">currentDuration</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">4</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">sceneData</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_img_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">refId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">image_0</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">url</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/monaka_uno/img_0.png</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">:369,</span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">:139},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_img_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">refId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">image_1</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">url</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/monaka_uno/img_1.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">:970,</span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">:970},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#007369ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">JOIN OUR WEBINAR SESSION ON</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">The Global Stage: Understanding International Affairs and Political Dynamics</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#262626</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">AUGUST 17</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">09:30 AM - GMT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#0f0f0f</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_05</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Natalya Miroslava</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_06</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">United Nations Foreign</span><span class="se">\\</span><span class="s2">u000bAffair Officer</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">}]},{</span><span class="se">\"</span><span class="s2">template</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:960,</span><span class="se">\"</span><span class="s2">file_path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/kornigou_uno/1679382942522-Kornigou_P_-_1.json</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">audioUrl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">thumbnail</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/template/images/1679382962919-Kornigou_P_-_1.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">size</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">post</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Kornigou Uno</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">duration</span><span class="se">\"</span><span class="s2">:15,</span><span class="se">\"</span><span class="s2">currentDuration</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">4</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">sceneData</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_img_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">refId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">image_0</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">url</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/kornigou_uno/img_0.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">:627,</span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">:515},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffd631ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#e82435ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#be202eff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#a00110ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_05</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#a91d2aff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Today's Session</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Influence &amp; Persuasion</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#1a1a1a</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Unlocking the secrets of effective communication and influence.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#1a1a1a</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Brian Henderson</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_05</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MAX Inc Community Officer</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">}]}],</span><span class="se">\"</span><span class="s2">audioUrl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">audioInPoint</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">00:00</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">totalDuration</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">8s</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_fade</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">is_render_all_format</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">is_trigger_shared_form</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">webhook_single_video</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">webhook</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-29T20:51:59Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-05T05:24:18Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"generated_lottie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/generated_lottie/UntitledVideo-1680148959432.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mk0DVMXVYFEKZRAzxdVf"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all bites.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://example.com/api/bites</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>10</td>
+<td>The API returns 10 items per page by default but you can request up to 100 using this parameter.</td>
+</tr>
+<tr>
+<td>project_id</td>
+<td>required</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+To retrieve bite data, you need to include the <code>project_id</code> parameter in your request.
+</aside>
+<h2 id='get-a-specific-bites'>Get a Specific Bites</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bite_size_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test shareable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"untitled-video-499"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"output"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">scenes</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">template</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:957,</span><span class="se">\"</span><span class="s2">file_path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/monaka_uno/1679382245485-Monaka_P_-_1.json</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">audioUrl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">thumbnail</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/template/images/1679382254309-Monaka_P_-_1.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">size</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">post</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Monaka Uno</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">duration</span><span class="se">\"</span><span class="s2">:15,</span><span class="se">\"</span><span class="s2">currentDuration</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">4</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">sceneData</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_img_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">refId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">image_0</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">url</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/monaka_uno/img_0.png</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">:369,</span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">:139},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_img_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">refId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">image_1</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">url</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/monaka_uno/img_1.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">:970,</span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">:970},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#007369ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">JOIN OUR WEBINAR SESSION ON</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">The Global Stage: Understanding International Affairs and Political Dynamics</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#262626</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">AUGUST 17</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#02a676</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">09:30 AM - GMT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#0f0f0f</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_05</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Natalya Miroslava</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_06</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">United Nations Foreign</span><span class="se">\\</span><span class="s2">u000bAffair Officer</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">}]},{</span><span class="se">\"</span><span class="s2">template</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">:960,</span><span class="se">\"</span><span class="s2">file_path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/kornigou_uno/1679382942522-Kornigou_P_-_1.json</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">audioUrl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">thumbnail</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/template/images/1679382962919-Kornigou_P_-_1.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">size</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">post</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Kornigou Uno</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">duration</span><span class="se">\"</span><span class="s2">:15,</span><span class="se">\"</span><span class="s2">currentDuration</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">4</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">sceneData</span><span class="se">\"</span><span class="s2">:[{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_img_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">refId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">image_0</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">url</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/kornigou_uno/img_0.jpg</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">width</span><span class="se">\"</span><span class="s2">:627,</span><span class="se">\"</span><span class="s2">height</span><span class="se">\"</span><span class="s2">:515},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffd631ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#e82435ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#be202eff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#a00110ff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_shp_05</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#a91d2aff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_01</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Today's Session</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Influence &amp; Persuasion</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#1a1a1a</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_03</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Unlocking the secrets of effective communication and influence.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#1a1a1a</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_04</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Brian Henderson</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">sc01_txt_05</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MAX Inc Community Officer</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">color</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">#ffffff</span><span class="se">\"</span><span class="s2">}]}],</span><span class="se">\"</span><span class="s2">audioUrl</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">audioInPoint</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">00:00</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">totalDuration</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">8s</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_fade</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">is_render_all_format</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">is_trigger_shared_form</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">webhook_single_video</span><span class="se">\"</span><span class="s2">:false,</span><span class="se">\"</span><span class="s2">webhook</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"\"</span><span class="s2">}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-29T20:51:59Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-05T05:24:18Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"generated_lottie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/generated_lottie/UntitledVideo-1680148959432.mp4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mk0DVMXVYFEKZRAzxdVf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kornigou Uno"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kornigou-uno"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">duration</span><span class="se">\"</span><span class="s2">:15.066666666666666,</span><span class="se">\"</span><span class="s2">scene</span><span class="se">\"</span><span class="s2">:1}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"file_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/kornigou_uno/1679382942522-Kornigou_P_-_1.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"thumbnail_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/thumbnail/template/images/1680578980340-Kornigou_P_-_1_[f0075](1).jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_published"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-21T00:15:47.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-03T20:29:46.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"thumbnail_large_path"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"video_preview_small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/video/preview/template/videos/1680578983595-Kornigou_P_-_1-74.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"video_preview_large"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"audio_path"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"categories"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[</span><span class="se">\"</span><span class="s2">Podcast</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">Profile</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">Social Media</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">Webinar</span><span class="se">\"</span><span class="s2">]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"upload_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bannerbite"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_allow_video"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1350</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For Instagram or Facebook post"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ffffff"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-19T19:09:33.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-19T19:09:33.000Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific project.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://example.com/bites/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the bite to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-scenes-data'>Get Scenes Data</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"header_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_img_01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_img_02"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_txt_01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_5"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_txt_02"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_txt_03"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_7"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_txt_04"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_8"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_txt_05"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header_9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sc01_txt_06"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves scenes data from bite.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://example.com/api/bites/sceneData/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the bite to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='renders'>Renders</h1><h2 id='generate-image-video'>Generate Image/Video</h2>
+<blockquote>
+<p>Example JSON Scenes Data:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">                                                                     
+  </span><span class="p">{</span><span class="w"> 
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@mail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sc01_txt_01"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is Lorem Ipsum?"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sc01_img_01"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/baklava_p_2/img_0.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sc01_txt_02"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Render request has been aceppted and now in progress"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-17"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint generate a image or video.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET http://example.com/bites/render/custom/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the bite to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>audioUrl</td>
+<td>null</td>
+<td>Retrieve URL Audio</td>
+</tr>
+<tr>
+<td>type</td>
+<td>image</td>
+<td>Type of render <code>image</code> or <code>video</code></td>
+</tr>
+<tr>
+<td>scene</td>
+<td>0</td>
+<td>If the type is <code>image</code>, the <code>scene</code> parameter is required. This parameter determines which scene will be rendered</td>
+</tr>
+<tr>
+<td>webhook</td>
+<td>string</td>
+<td>Please provide the webhook URL where you would like to receive notifications or updates by filling in the designated field</td>
+</tr>
+<tr>
+<td>sceneData</td>
+<td>object</td>
+<td>Array of object include email and scenes data</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Bannerbite API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The bannerbite requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified bannerbite could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a bannerbite with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The bannerbite requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many bannerbites! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
