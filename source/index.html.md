@@ -259,6 +259,18 @@ ID | The ID of the bite to retrieve
       "value": "https://bannerbite-dev-storage.s3.eu-central-1.amazonaws.com/gallery/images/1683178194469-tranpsarent-dummy-scene.png"
   },
   {
+      "name": "scene01_shape_01",
+      "color": "#ffffff"
+  },
+  {
+      "name": "scene01_shape_02",
+      "color": "#e4002b"
+  },
+  {
+      "name": "scene01_shape_03",
+      "color": "#ffffff"
+  },
+  {
       "name": "scene01_text_01",
       "value": "Rune  Kristine Fiske ",
       "color": "#ffffff"
@@ -319,6 +331,12 @@ Parameter | Type  | Description
 --------- | ------- | -----------
 name | string | The variables used to identify the scene and the parameters to be used
 value | string | Value to be filled in the scene
+
+### Parameters Shape
+Parameter | Type  | Description
+--------- | ------- | -----------
+name | string | The variables used to identify the scene and the parameters to be used
+color | string | The variable used to change the color of the shape
 
 ### Parameters Video
 Parameter | Type | Description
