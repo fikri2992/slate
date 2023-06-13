@@ -253,24 +253,49 @@ ID | The ID of the bite to retrieve
 > The above command returns JSON structured like this:
 
 ```json
-{
-    "header_1": "email",
-    "header_2": "sc01_img_01",
-    "header_3": "sc01_img_02",
-    "header_4": "sc01_txt_01",
-    "header_5": "sc01_txt_02",
-    "header_6": "sc01_txt_03",
-    "header_7": "sc01_txt_04",
-    "header_8": "sc01_txt_05",
-    "header_9": "sc01_txt_06"
-}
+[
+  {
+      "name": "scene01_image_01",
+      "value": "https://bannerbite-dev-storage.s3.eu-central-1.amazonaws.com/gallery/images/1683178194469-tranpsarent-dummy-scene.png"
+  },
+  {
+      "name": "scene01_text_01",
+      "value": "Rune  Kristine Fiske ",
+      "color": "#ffffff"
+  },
+  {
+      "name": "scene01_text_02",
+      "value": "2. kandidat i Lillestrøm",
+      "color": "#ffffff"
+  },
+  {
+      "name": "scene01_text_03",
+      "value": "Arbeiderpartiet står for frihet, likhet og solidaritet. Les om Arbeiderpartiets politikk og politikere.",
+      "color": "#1f1f1f"
+  },
+  {
+      "name": "scene01_video",
+      "value": "https://bannerbite-storage.s3.eu-central-1.amazonaws.com/bite/videos/1686534630750-25s_5scene1686050915369overlay.mp4",
+      "height": 1350,
+      "width": 1082,
+      "inPoint": "00:00",
+      "outPoint": "00:25",
+      "visibility": true,
+      "position": {
+          "x": 0,
+          "y": 2,
+          "finalWidth": 1080,
+          "finalHeight": 1347
+      }
+  }
+]
 ```
 
 This endpoint retrieves scenes data from bite.
 
 ### HTTP Request
 
-`GET http://example.com/api/bites/sceneData/<ID>`
+`GET http://example.com/api/sceneData/<ID>`
 
 ### URL Parameters
 
@@ -278,29 +303,96 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the bite to retrieve
 
+### Scene Data Parameters
+
+<img src="/images/scenedata.png" alt="Scene Data" width="70%" height="70%">
+
+### Parameters Text
+Parameter | Type | Description
+--------- | ------- | -----------
+name | string | The variables used to identify the scene and the parameters to be used
+value | string | Value to be filled in the scene
+color | string | The variable used to change the color of the text
+
+### Parameters Image
+Parameter | Type  | Description
+--------- | ------- | -----------
+name | string | The variables used to identify the scene and the parameters to be used
+value | string | Value to be filled in the scene
+
+### Parameters Video
+Parameter | Type | Description
+--------- | ------- | -----------
+name | string | The variables used to identify the scene and the parameters to be used
+value | string | Value to be filled in the scene
+Height | number | Height of video
+Width | number | Width of video
+inPoint | string | The start of video to be inserted with format <code>mm:ss</code>
+outPoint | string | The end of video to be inserted with format <code>mm:ss</code>
+visibility | boolean | Variables used to show and hide videos
+position | object | Video position
+
+
 # Renders
 
 ## Generate Image/Video
-> Example JSON Scenes Data:
+> Example JSON:
 
 ```json
-[                                                                     
-  { 
-    "email": "test@mail.com",
-    "sc01_txt_01": "What is Lorem Ipsum?",
-    "sc01_img_01": "https://bannerbite-storage.s3.eu-central-1.amazonaws.com/template/baklava_p_2/img_0.png",
-    "sc01_txt_02": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-  }
-]
+{
+  "uid": "ASDbdsabkasdj126",
+  "audio": {
+      "url": "",
+      "inPoint": "00:00"
+  },
+  "type": "image",
+  "email": "",
+  "scene": 1,
+  "webhook": "",
+  "sceneData": [
+    {
+        "name": "scene01_image_01",
+        "value": "https://bannerbite-dev-storage.s3.eu-central-1.amazonaws.com/gallery/images/1683178194469-tranpsarent-dummy-scene.png"
+    },
+    {
+        "name": "scene01_text_01",
+        "value": "Rune  Kristine Fiske ",
+        "color": "#ffffff"
+    },
+    {
+        "name": "scene01_text_02",
+        "value": "2. kandidat i Lillestrøm",
+        "color": "#ffffff"
+    },
+    {
+        "name": "scene01_text_03",
+        "value": "Arbeiderpartiet står for frihet, likhet og solidaritet. Les om Arbeiderpartiets politikk og politikere.",
+        "color": "#1f1f1f"
+    },
+    {
+        "name": "scene01_video",
+        "value": "https://bannerbite-storage.s3.eu-central-1.amazonaws.com/bite/videos/1686534630750-25s_5scene1686050915369overlay.mp4",
+        "height": 1350,
+        "width": 1082,
+        "inPoint": "00:00",
+        "outPoint": "00:25",
+        "visibility": true,
+        "position": {
+            "x": 0,
+            "y": 2,
+            "finalWidth": 1080,
+            "finalHeight": 1347
+        }
+    }
+  ]
+}
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 1,
-  "message": "Render request has been aceppted and now in progress",
-  "created_at": "2023-04-17"
+  "message": "Render request has been aceppted and now in progress"
 }
 ```
 
@@ -308,7 +400,7 @@ This endpoint generate a image or video.
 
 ### HTTP Request
 
-`GET http://example.com/bites/render/custom/<ID>`
+`POST http://example.com/render`
 
 ### URL Parameters
 
@@ -318,10 +410,12 @@ ID | The ID of the bite to retrieve
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter | Type | Description
 --------- | ------- | -----------
-audioUrl | null | Retrieve URL Audio
-type | image | Type of render <code>image</code> or <code>video</code>
-scene | 0 | If the type is <code>image</code>, the <code>scene</code> parameter is required. This parameter determines which scene will be rendered
-webhook | string | Please provide the webhook URL where you would like to receive notifications or updates by filling in the designated field
-sceneData | object | Array of object include email and scenes data
+uid | string | ID or Access Token from Bite (Required)
+audio | object | Object of audio include <code>url</code> and <code>inPoint</code> (Optional)
+email | string | The resulting video rendering will be sent via email (Optional)
+type | string | Type of render <code>image</code>, <code>video</code> or <code>overlay</code> (Default: image)
+scene | number | If the type is <code>image</code>, the <code>scene</code> parameter is required. This parameter determines which scene will be rendered (Default: 1)
+webhook | string | Please provide the webhook URL where you would like to receive notifications or updates by filling in the designated field (Default: null)
+sceneData | object | Array of object include email and scenes data (Required)
