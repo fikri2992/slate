@@ -477,7 +477,7 @@ sceneData | object | Array of object include email and scenes data (Required)
 ]
 ```
 
-This endpoint generate a image or video.
+This endpoint generate a image or video from Make/Integromat
 
 ### HTTP Request
 
