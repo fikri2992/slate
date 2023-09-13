@@ -437,3 +437,64 @@ type | string | Type of render <code>image</code>, <code>video</code> or <code>o
 scene | number | If the type is <code>image</code>, the <code>scene</code> parameter is required. This parameter determines which scene will be rendered (Default: 1)
 webhook | string | Please provide the webhook URL where you would like to receive notifications or updates by filling in the designated field (Default: null)
 sceneData | object | Array of object include email and scenes data (Required)
+
+# Integration
+
+## Render from Make/Integromat
+> Example JSON Input:
+
+```json
+[
+  {
+    "email": "hello@example.com",
+    "bite_id": 1,
+    "project_id": 1,
+    "type": "image",
+    "scene": 1,
+    "webhook": null,
+    "audio": [
+      {
+        "url": "www.example.com/thisisaudio.mp4",
+        "in_point": "00:00" //format mm:ss
+      }
+    ]
+    "custom_message": "Example message",
+    "sc01_txt_01": "Example 1",
+    "sc01_txt_02": "Example 2",
+    "sc01_txt_03": "Example 3",
+    "sc01_txt_04": "Example 4"
+  }
+]
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "message": "Render request has been aceppted and now in progress"
+    }
+]
+```
+
+This endpoint generate a image or video.
+
+### HTTP Request
+
+`POST http://example.com/api/integromat/render`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+email | string | The resulting video rendering will be sent via email
+bite_id | number | The ID of the bite to retrieve
+project_id | number | The ID of the project to retrieve
+type | string | Type of render <code>image</code>, <code>video</code> , <code>sequence</code> or <code>overlay</code> (Default: image)
+scene | number | If the type is <code>image</code>, the <code>scene</code> parameter is required. This parameter determines which scene will be rendered (Default: 1)
+webhook | string | Please provide the webhook URL where you would like to receive notifications or updates by filling in the designated field (Default: null)
+audio | array of object | Object of audio include <code>url</code> and <code>in_point</code> (Optional)
+custom_message | string | The custom message for the result
+<aside class="notice">
+The variable with prefix <code>sc</code> is dynamic from the bite
+</aside>
